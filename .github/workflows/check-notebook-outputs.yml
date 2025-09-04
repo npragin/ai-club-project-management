@@ -1,0 +1,30 @@
+name: Check Notebook Outputs
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  check-notebooks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      
+      - name: Install nbstripout
+        run: pip install nbstripout
+      
+      - name: Check if notebooks have outputs
+        run: |
+          shopt -s globstar
+          if ! nbstripout --dry-run --extra-keys="metadata.kernelspec metadata.language_info" **/*.ipynb; then
+            echo "Some notebooks contain outputs or metadata that should be stripped"
+            echo "Run nbstripout --extra-keys='metadata.kernelspec metadata.language_info'"
+            exit 1
+          else
+            echo "All notebooks are clean"
+          fi
