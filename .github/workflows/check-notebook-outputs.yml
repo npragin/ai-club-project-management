@@ -23,7 +23,7 @@ jobs:
       - name: Check if notebooks have outputs
         run: |
           shopt -s globstar
-          if ! nbstripout --dry-run --extra-keys="metadata.kernelspec metadata.language_info" **/*.ipynb; then
+          if ! nbstripout --dry-run --verify --extra-keys="metadata.kernelspec metadata.language_info" **/*.ipynb; then
             echo "Some notebooks contain outputs or metadata that should be stripped"
             echo "Run nbstripout --extra-keys='metadata.kernelspec metadata.language_info'"
             exit 1
