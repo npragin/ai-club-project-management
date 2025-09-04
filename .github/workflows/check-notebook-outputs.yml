@@ -24,8 +24,7 @@ jobs:
         run: |
           shopt -s globstar
           if ! nbstripout --dry-run --verify --extra-keys="metadata.kernelspec metadata.language_info" **/*.ipynb; then
-            echo "Some notebooks contain outputs or metadata that should be stripped"
-            echo "Run nbstripout --extra-keys='metadata.kernelspec metadata.language_info'"
+            echo "\nRun nbstripout --extra-keys='metadata.kernelspec metadata.language_info'"
             exit 1
           else
             echo "All notebooks are clean"
