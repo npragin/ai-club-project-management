@@ -17,14 +17,14 @@ from ucimlrepo import fetch_ucirepo
 plt.style.use('ggplot')
 
 def main():
-    """Load the student dataset, print summary information, and plot target distribution."""
+    """Load the student dataset, print summary information, and plot graduation status distribution."""
 
     # Fetch students dataset from ucirepo
     dataset = fetch_ucirepo(id=697) 
     
     # Store the dataset in two separate pandas dataframes
     # X = all columns (features) describing students (i.e., age, financial status)
-    # y = enrollment status of each student: Graduate, Dropout, or Enrolled
+    # y = graduation status of each student: Graduate, Dropout, or Enrolled
     X = dataset.data.features 
     y = dataset.data.targets 
 
@@ -33,7 +33,7 @@ def main():
     print(f"\nNumber of rows: {X.shape[0]}\nNumber of columns: {X.shape[1]}")
     print(f"\nColumn information: \n {dataset.variables}")
 
-    # Plot the enrollment status (Target) distribution as a bar chart
+    # Plot the graduation status (Target) distribution as a bar chart
     target_counts = y["Target"].value_counts()
 
     ax = target_counts.plot(
