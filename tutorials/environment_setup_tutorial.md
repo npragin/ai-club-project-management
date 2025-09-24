@@ -33,6 +33,10 @@ You have two options for where you will write your code and train your models. T
 
 To ensure you are on the ENGR servers, run the command `hostname` and verify that you see something like `flipX.engr.oregonstate.edu`, where X is a number 1-4.
 
+### OPTIONAL: Want to Never Use Duo or Your Password Again?
+
+If you want to avoid having to enter your password and complete Duo MFA every time you log in, you can set up SSH keys for the ENGR servers. This is optional, but recommended if you plan to work on the ENGR servers often. Follow this [video tutorial](https://youtu.be/6ZbZXPIsZtI?si=LtiNKq6084Bxp-6P&t=68) (1:08 to 7:15) to set it up.
+
 ## <a id="git"></a>GitHub and Git Setup
 
 Now that you know where you'll be working, we will set you up with Git and GitHub. Git is a version control system that helps you track changes to your code, and GitHub is a platform that hosts git repositories (AKA projects) online. Together, they enable you to save your work, collaborate with others, and maintain a record of your project changes to share with others.
