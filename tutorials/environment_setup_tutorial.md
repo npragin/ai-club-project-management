@@ -2,16 +2,16 @@
 
 Author: Noah Pragin
 
-This is a tutorial for getting your development environment set up and ready to work on a project! In this tutorial we will:
+This tutorial will guide you through setting up your development environment and preparing it for project work! In this tutorial, we will:
 
 - Get you on the engineering servers (optional)
-- Setup GitHub and git
-- Download and setup VS Code, the application you'll use to write code (optional)
+- Set up GitHub and git
+- Download and set up VS Code, the application you'll use to write code (optional)
 - Ready Python and Python's package manager Pip
 - Introduce Python virtual environments
 
 ## Where Will You Work?
-You have two options on where you will write your code and train your models. The first is your computer, and the second are the engineering servers that OSU makes available to its students. OSU's engineering servers provide a Linux environment with many tools pre-installed, and are where CS and ECE students complete a majority of their coursework. We recommend using the ENGR servers, but you are free to make your own decision. To help you, here are the pros and cons of each environment:
+You have two options for where you will write your code and train your models. The first is your computer, and the second is the engineering servers that OSU makes available to its students. OSU's engineering servers offer a Linux environment with numerous pre-installed tools, where CS and ECE students complete the majority of their coursework. We recommend using the ENGR servers, but you are free to make your own decision. To help you, here are the pros and cons of each environment:
 
 | | Pros | Cons |
 | - | - | - |
@@ -22,11 +22,11 @@ You have two options on where you will write your code and train your models. Th
 
 ### Getting on the ENGR Servers
 1. Navigate to [teach.engr.oregonstate.edu](https://teach.engr.oregonstate.edu/teach.php?type=want_auth)
-2. Log in to TEACH using the same credentials you would to access your email
+2. Log in to TEACH using the same credentials you would use to access your email
 3. If it fails, you do not have a TEACH account and need to create one by clicking "Create a new account (Enable your Engineering resources)"
 4. Open a terminal and run `ssh <ONID>@access.engr.oregonstate.edu`, **replacing &lt;ONID&gt; with your ONID username** (for example, mine is praginn)
 5. Enter your ONID password if prompted
-6. Select your DUO device when prompted, complete the MFA
+6. Select your DUO device when prompted, and complete the MFA
 7. You should now be able to execute commands on the ENGR servers!
 
 #### Verification
@@ -36,10 +36,10 @@ To ensure you are on the ENGR servers, run the command `hostname` and verify tha
 ## <a id="git-setup"></a>GitHub and git setup
 SSH keys and repository set up (create a directory and repository)
 ## Visual Studio Code Download
-How to download VSC, what extensions to download (python, jupyter, remote ssh, pylance if it doesn't come with python)
+How to download VSC, what extensions to download (Python, Jupyter, remote SSH, PyLance if it doesn't come with Python)
 ## Python and Pip download
-Should use ENGR to just module load, but link to python download documentation
+Should use ENGR to just module load, but link to the Python download documentation
 ## venv setup and usage
-Setup a venv, source it, pip install something with venv sourced, deactivate, show that dependency is only available when venv is sourced
+Set up a venv, source it, Pip install something with venv sourced, deactivate, and show that the dependency is only available after sourcing the venv
 
 TODO(npragin): Make sure there are verification steps throughout for students to ensure they've done things correctly
