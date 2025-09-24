@@ -5,7 +5,7 @@ Author: Noah Pragin
 This tutorial will guide you through setting up your development environment and preparing it for project work! In this tutorial, we will:
 
 - Get you on the engineering servers (optional)
-- Set up GitHub and git
+- Set up GitHub and Git
 - Download and set up VS Code, the application you'll use to write code (optional)
 - Ready Python and Python's package manager Pip
 - Introduce Python virtual environments
@@ -18,7 +18,7 @@ You have two options for where you will write your code and train your models. T
 | **Engineering Servers** | - No need to install Python or Pip, it's ready for you<br>- If you end up needing to use the HPC it will be *slightly* easier to move your files over<br>- Keep your computer clean, you will already be doing a lot of work on the engineering servers as a CS/ECE student<br>- Consistent environment across groups (Linux), no "works on my machine" issues<br>- Don't take up space on your own computer | - You will need internet access to work on your project<br>- Can be slower on occasion due to network latency|
 | **Your Computer** | - No internet access required to work on your project<br>- More responsive development experience (no latency because no internet connection)<br>- Full control over your environment | - Need to install Python and Pip yourself<br>- Potential issues for collaboration if partners use a different OS than you<br>- Uses up your storage space (datasets are big)<br>- Harder for us to help you |
 
-#### **If you choose to work locally (on your own computer), skip to the [GitHub and git Setup section](#git), otherwise continue to the Getting on the ENGR Servers section**
+#### **If you choose to work locally (on your own computer), skip to the [GitHub and Git Setup section](#git), otherwise continue to the Getting on the ENGR Servers section**
 
 ### Getting on the ENGR Servers
 1. Navigate to [teach.engr.oregonstate.edu](https://teach.engr.oregonstate.edu/teach.php?type=want_auth)
@@ -33,9 +33,9 @@ You have two options for where you will write your code and train your models. T
 
 To ensure you are on the ENGR servers, run the command `hostname` and verify that you see something like `flipX.engr.oregonstate.edu`, where X is a number 1-4.
 
-## <a id="git"></a>GitHub and git Setup
+## <a id="git"></a>GitHub and Git Setup
 
-Now that you know where you'll be working, we will get you set up with git and GitHub. Git is a version control system that helps you track changes to your code, and GitHub is a platform that hosts git repositories (AKA projects) online. Together, they allow you to save your work, collaborate with others, and maintain a history of your project changes to show others.
+Now that you know where you'll be working, we will set you up with Git and GitHub. Git is a version control system that helps you track changes to your code, and GitHub is a platform that hosts git repositories (AKA projects) online. Together, they enable you to save your work, collaborate with others, and maintain a record of your project changes to share with others.
 
 #### **If you already have git and GitHub set up wherever you decided to work (verifiable via the [verification step for this section](#git-verification)), skip to the [Visual Studio Code Setup section](#vsc)**
 
@@ -44,15 +44,15 @@ Now that you know where you'll be working, we will get you set up with git and G
 ### Creating a GitHub Account
 If you don't have a GitHub account, click this [link](https://github.com/signup) to create one
 
-**NOTE**: Use your personal email for this! Your GitHub account should be a portfolio of your work, meaning it should persist after you graduate and your school email is deactivated.
+**NOTE**: Use your personal email for this! Your GitHub account should serve as a portfolio of your work, meaning it should remain accessible after you graduate and your school email is deactivated.
 
 ### <a id="git-ssh"></a> Setting up SSH Keys for GitHub
-SSH keys provide a secure way to authenticate with GitHub without entering your password every time. We'll generate these keys on the ENGR servers (or your local machine if working locally).
+SSH keys provide a secure way to authenticate with GitHub without needing to enter your password every time. We'll generate these keys on the ENGR servers (or your local machine if working locally).
 
 1. In your terminal, run `ssh-keygen -t ed25519 -C "your_email@email.com"`, **replacing `your_email@email.com` with the email address associated with your GitHub account**
 2. When prompted for where to store the keys, press Enter to use the default location
-3. When prompted for a passphrase, you can leave it empty (just press Enter) for convenience, but adding a passphrase is more secure
-4. Your key has now been created. Next we must print the public key by running `cat ~/.ssh/id_ed25519.pub`
+3. When prompted for a passphrase, you can leave it empty (press Enter) for convenience, but adding a passphrase is more secure
+4. Your key has now been created. Next, we must print the public key by running `cat ~/.ssh/id_ed25519.pub`
 5. Copy the SSH key by selecting and copying the entire output (usually Ctrl+Shift+C or Cmd+Shift+C)
 6. Add the key to GitHub:
     1. Go to GitHub and click your profile icon (top-right corner)
@@ -63,7 +63,7 @@ SSH keys provide a secure way to authenticate with GitHub without entering your 
 
 ### <a id="git-verification"></a>GitHub SSH Keys Verification
 
-To ensure your SSH keys were set up correctly, run `ssh -T git@github.com` in your terminal. You should see a message like:
+To ensure you set up your SSH keys correctly, run `ssh -T git@github.com` in your terminal. You should see a message like:
 
 ```txt
 Hi <username>! You've successfully authenticated, but GitHub does not provide shell access.
@@ -71,7 +71,7 @@ Hi <username>! You've successfully authenticated, but GitHub does not provide sh
 
 ### Creating Your First Repository
 
-Now that your SSH keys are set up, let's create a test repository to practice the complete git workflow. This will help you understand how to create projects, make changes, and sync them between your local environment and GitHub.
+Now that you've set up your SSH keys, let's create a test repository to practice the complete git workflow. This will help you understand how to create projects, make changes, and sync them between your local environment and GitHub.
 
 #### **If you've made a repository before and hosted it on GitHub, skip to the [Visual Studio Code Setup section](#vsc)**
 
@@ -99,13 +99,13 @@ Now that your SSH keys are set up, let's create a test repository to practice th
 
 ### Git and GitHub Workflow Verification
 
-If you can see your updated README.md file in your repository on GitHub with your changes, congratulations! You've successfully completed the full git/GitHub workflow. You now know how to:
+If you can see your updated README.md file in your GitHub repository with your changes, congratulations! You've completed the full git/GitHub workflow. You now know how to:
 - Create repositories on GitHub
 - Clone them to your local environment
 - Make changes and push them back
 - Sync your work between local and remote copies of your repository
 
-This workflow is exactly what you'll use for your AI Club project throughout the term.
+This workflow is precisely what you'll use for your AI Club project throughout the term.
 
 ## <a id="vsc"></a> Visual Studio Code Setup
 How to download VSC, what extensions to download (Python, Jupyter, remote SSH, PyLance if it doesn't come with Python)
