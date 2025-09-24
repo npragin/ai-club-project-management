@@ -29,7 +29,7 @@ You have two options for where you will write your code and train your models. T
 6. Select your DUO device when prompted, and complete the MFA
 7. You should now be able to execute commands on the ENGR servers!
 
-#### Verification
+### ENGR Access Verification
 
 To ensure you are on the ENGR servers, run the command `hostname` and verify that you see something like `flipX.engr.oregonstate.edu`, where X is a number 1-4.
 
