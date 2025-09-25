@@ -166,8 +166,23 @@ VS Code's power comes from its extensions. You can open the Extensions panel by 
 1. Create a new file with a `.py` extension (for example, `test.py`) and verify that you see Python syntax highlighting (keywords in different colors, such as for, if, def, etc.)
 2. If you are working on the ENGR servers, verify that you see `SSH: <ONID>@access.engr.oregonstate.edu` in the bottom-left corner of VS Code, indicating you've connected to the ENGR servers.
 
-## <a id="python"></a>Python and Pip download
-Should use ENGR to just module load, but link to the Python download documentation
+## <a id="python"></a>Python and Pip Download
+
+Python is a programming language widely used in AI and machine learning. Pip is Python's package manager, which allows you to install and manage additional libraries and dependencies that are not included in the standard Python library.
+
+If you are on the ENGR servers, Python and Pip are already installed! By default, Python 3.9 is loaded, but if you want to use a specific version, you can use the `module load python/3.X` command, replacing `X` with the minor version you want (for example, `module load python/3.12`). You can see what versions are available by running `module avail python`. Note that you will have to re-run this every time you log in, or you can add the command to your `.bashrc` file to have it load automatically.
+
+If you are working locally, you can find the installation instructions for Python, which includes Pip, on the [official Python website](https://www.python.org/downloads/). Make sure to download Python 3.9 or higher, as that is what most modern ML libraries require.
+
+### Python and Pip Verification
+
+To verify that Python and Pip are installed correctly, open your terminal and run the following commands:
+```bash
+python --version
+pip --version
+```
+If neither gives you an error and you see version numbers, you're good to go! If either gives you an error, try `python3 --version` or `pip3 --version` instead.
+
 ## venv setup and usage
 Set up a venv, source it, Pip install something with venv sourced, deactivate, and show that the dependency is only available after sourcing the venv
 
