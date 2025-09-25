@@ -113,7 +113,7 @@ This workflow is precisely what you'll use for your AI Club project throughout t
 
 ## <a id="vsc"></a> Visual Studio Code Setup
 
-You are free to use any text editor for your project, however, we recommend beginners to use Visual Studio Code (VS Code). VS Code is a free, lightweight code editor that integrates seamlessly with git, remote servers, and community extensions.
+You are free to use any text editor for your project; however, we recommend beginners to use Visual Studio Code (VS Code). VS Code is a free, lightweight code editor that integrates seamlessly with git, remote servers, and community extensions.
 
 #### **If you're not using VS Code, you can skip to the [Python and Pip Setup section](#python-setup)**
 
@@ -125,16 +125,16 @@ You are free to use any text editor for your project, however, we recommend begi
 
 **NOTE**: If you are working on the ENGR servers, the Remote - SSH extension is required.
 
-VS Code's power comes from its extensions. You can open the Extensions panel by clicking the extensions icon in the left sidebar (four squares icon) or pressing `Ctrl+Shift+X` (`Cmd+Shift+X` on Mac). Whenever installing Extensions, be sure to verify the author. Here are the ones we recommend for your project:
+VS Code's power comes from its extensions. You can open the Extensions panel by clicking the extensions icon in the left sidebar (four squares icon) or pressing `Ctrl+Shift+X` (`Cmd+Shift+X` on Mac). Whenever you install extensions, be sure to verify the author. Here are the ones we recommend for your project:
 
 1. **Python Extension Pack**
    - In the Extensions panel, search for "Python" and install the extension published by Microsoft
    - This automatically includes Pylance (a powerful language server for Python), a Python debugger, and some other nifty stuff
-   - This extension pack is useful to you because most of the code you write for your project will be in Python!
+   - This extension pack is helpful to you because most of the code you write for your project will be in Python!
 2. **Jupyter Extension Pack**
    - In the Extensions panel, search for "Jupyter" and install the extension published by Microsoft
-   - This provides Jupyter notebook support, allowing you to create, edit, and more seamlessly interact with Jupyter notebooks directly in VS Code
-   - This extension pack is useful to you because our tutorials for the libraries you'll use to train your models will be in Jupyter notebooks!
+   - This provides Jupyter notebook support, allowing you to create, edit, and interact more seamlessly with Jupyter notebooks directly in VS Code
+   - This extension pack is helpful to you because our tutorials for the libraries you'll use to train your models will be in Jupyter notebooks!
 3. **Remote - SSH** (if working on ENGR servers):
    - In the Extensions panel, search for "Remote - SSH"
    - Install the extension by Microsoft
@@ -164,7 +164,7 @@ VS Code's power comes from its extensions. You can open the Extensions panel by 
 ### <a id="vsc-verification"></a>VS Code Verification
 
 1. Create a new file with a `.py` extension (for example, `test.py`) and verify that you see Python syntax highlighting (keywords in different colors, such as for, if, def, etc.)
-2. If you are working on the ENGR servers, verify that you see `SSH: <ONID>@access.engr.oregonstate.edu` in the bottom-left corner of VS Code, indicating you are connected to the ENGR servers.
+2. If you are working on the ENGR servers, verify that you see `SSH: <ONID>@access.engr.oregonstate.edu` in the bottom-left corner of VS Code, indicating you've connected to the ENGR servers.
 
 ## <a id="python"></a>Python and Pip download
 Should use ENGR to just module load, but link to the Python download documentation
