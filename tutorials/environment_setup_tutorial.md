@@ -57,7 +57,7 @@ SSH keys provide a secure way to authenticate with GitHub without needing to ent
 2. When prompted for where to store the keys, press Enter to use the default location
 3. When prompted for a passphrase, you can leave it empty (press Enter) for convenience, but adding a passphrase is more secure
 4. Your key has now been created. Next, we must print the public key by running `cat ~/.ssh/id_ed25519.pub`
-5. Copy the SSH key by selecting and copying the entire output (usually Ctrl+Shift+C or Cmd+Shift+C)
+5. Copy the SSH key by selecting and copying the entire output (usually `Ctrl+Shift+C` or `Cmd+Shift+C`)
 6. Add the key to GitHub:
     1. Go to GitHub and click your profile icon (top-right corner)
     2. Go to Settings → SSH and GPG keys → New SSH key
