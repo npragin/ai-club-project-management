@@ -168,13 +168,15 @@ VS Code's power comes from its extensions. You can open the Extensions panel by 
 
 ## <a id="python"></a>Python and Pip Download
 
+#### **If you are working locally and have Python and Pip installed (verifiable via the [verification step for this section](#python-verification)), skip to the [venv Setup and Usage section](#venv)**
+
 Python is a programming language widely used in AI and machine learning. Pip is Python's package manager, which allows you to install and manage additional libraries and dependencies that are not included in the standard Python library.
 
 If you are on the ENGR servers, Python and Pip are already installed! By default, Python 3.9 is loaded, but if you want to use a specific version, you can use the `module load python/3.X` command, replacing `X` with the minor version you want (for example, `module load python/3.12`). You can see what versions are available by running `module avail python`. Note that you will have to re-run this every time you log in, or you can add the command to your `.bashrc` file to have it load automatically.
 
 If you are working locally, you can find the installation instructions for Python, which includes Pip, on the [official Python website](https://www.python.org/downloads/). Make sure to download Python 3.9 or higher, as that is what most modern ML libraries require.
 
-### Python and Pip Verification
+### <a id="python-verification"></a>Python and Pip Verification
 
 To verify that Python and Pip are installed correctly, open your terminal and run the following commands:
 ```bash
@@ -183,7 +185,7 @@ pip --version
 ```
 If neither gives you an error and you see version numbers, you're good to go! If either gives you an error, try `python3 --version` or `pip3 --version` instead.
 
-## venv setup and usage
+## <a id="venv"></a>venv Setup and Usage
 Set up a venv, source it, Pip install something with venv sourced, deactivate, and show that the dependency is only available after sourcing the venv
 
 TODO(npragin): Make sure there are verification steps throughout for students to ensure they've done things correctly
