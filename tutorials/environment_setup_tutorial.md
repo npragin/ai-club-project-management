@@ -79,14 +79,14 @@ Now that you've set up your SSH keys, let's create a test repository to practice
 
 #### **If you've made a repository before and hosted it on GitHub, skip to the [Visual Studio Code Setup section](#vsc)**
 
-1. **Create a repository on GitHub:**
+1. **Create a repository on GitHub**
    1. On GitHub, click the "+" icon in the top-right corner, then select "New repository"
    2. Give your repository a name like `test-repo` or `my-first-project`
    3. Check the box "Add a README file" (this adds a README.md file to your project, used to describe the repository so others know what it's about)
       - Normally, I would advise against initializing a repository with a README, but for this tutorial, it simplifies the process
    4. Click "Create repository"
 
-2. **Clone the repository to your working environment:**
+2. **Clone the repository to your working environment**
    1. On your new repository's main page, click the green "Code" button
    2. Make sure "SSH" is selected (not HTTPS)
    3. Copy the SSH URL (it should look like `git@github.com:yourusername/test-repo.git`)
@@ -94,7 +94,7 @@ Now that you've set up your SSH keys, let's create a test repository to practice
    5. Clone the repository: `git clone <paste-your-SSH-URL-here>`
    6. Navigate into the new directory: `cd test-repo` (or whatever you named it)
 
-4. **Make some changes and push them back to GitHub:**
+4. **Make some changes and push them back to GitHub**
    1. Make a change to the README file: `echo "\nThis is my first GitHub repository!" >> README.md`
    2. Check what files have changed: `git status`
    3. Stage your changes: `git add README.md` (or `git add .` to add all changes)
