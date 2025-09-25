@@ -112,8 +112,61 @@ If you can see your updated README.md file in your GitHub repository with your c
 This workflow is precisely what you'll use for your AI Club project throughout the term.
 
 ## <a id="vsc"></a> Visual Studio Code Setup
-How to download VSC, what extensions to download (Python, Jupyter, remote SSH, PyLance if it doesn't come with Python)
-## Python and Pip download
+
+You are free to use any text editor for your project, however, we recommend beginners to use Visual Studio Code (VS Code). VS Code is a free, lightweight code editor that integrates seamlessly with git, remote servers, and community extensions.
+
+#### **If you're not using VS Code, you can skip to the [Python and Pip Setup section](#python-setup)**
+
+### VS Code Installation
+1. Go to [code.visualstudio.com/download](https://code.visualstudio.com/download) and download the version of VS Code for your operating system
+2. After installing VS Code, launch it
+
+### Recommended Extensions
+
+**NOTE**: If you are working on the ENGR servers, the Remote - SSH extension is required.
+
+VS Code's power comes from its extensions. You can open the Extensions panel by clicking the extensions icon in the left sidebar (four squares icon) or pressing `Ctrl+Shift+X` (`Cmd+Shift+X` on Mac). Whenever installing Extensions, be sure to verify the author. Here are the ones we recommend for your project:
+
+1. **Python Extension Pack**
+   - In the Extensions panel, search for "Python" and install the extension published by Microsoft
+   - This automatically includes Pylance (a powerful language server for Python), a Python debugger, and some other nifty stuff
+   - This extension pack is useful to you because most of the code you write for your project will be in Python!
+2. **Jupyter Extension Pack**
+   - In the Extensions panel, search for "Jupyter" and install the extension published by Microsoft
+   - This provides Jupyter notebook support, allowing you to create, edit, and more seamlessly interact with Jupyter notebooks directly in VS Code
+   - This extension pack is useful to you because our tutorials for the libraries you'll use to train your models will be in Jupyter notebooks!
+3. **Remote - SSH** (if working on ENGR servers):
+   - In the Extensions panel, search for "Remote - SSH"
+   - Install the extension by Microsoft
+   - This allows you to connect directly to ENGR servers from within VS Code and edit files as if they were on your computer
+
+### Setting Up Remote Development
+
+#### **If you're working locally, skip to the [VS Code Verification section](#vsc-verification)**
+
+1. **Add ENGR Servers to Extension**
+   - Press `Ctrl+Shift+P` (`Cmd+Shift+P` on Mac) to open the command palette
+   - Type "connect to host" and you should see "Remote-SSH: Connect to Host..." - select it
+   - Select "Add New SSH Host..."
+   - Enter `ssh <ONID>@access.engr.oregonstate.edu` (replace `<ONID>` with your actual ONID)
+   - Select where to save the SSH configuration (the default is fine)
+
+2. **Connect to the ENGR Servers**
+   - Now that you've added the host, open the command palette again (`Ctrl+Shift+P` or `Cmd+Shift+P`)
+   - Type "connect to host" and select "Remote-SSH: Connect to Host..."
+   - Select the host you just added
+   - A new VS Code window will open, connecting you to the ENGR servers
+
+3. **Explore**
+   - Once connected, open the file explorer by clicking the file icon in the left sidebar or pressing `Ctrl+Shift+E` (`Cmd+Shift+E` on Mac)
+   - You can now edit files on the ENGR servers using VS Code's full interface
+
+### <a id="vsc-verification"></a>VS Code Verification
+
+1. Create a new file with a `.py` extension (for example, `test.py`) and verify that you see Python syntax highlighting (keywords in different colors, such as for, if, def, etc.)
+2. If you are working on the ENGR servers, verify that you see `SSH: <ONID>@access.engr.oregonstate.edu` in the bottom-left corner of VS Code, indicating you are connected to the ENGR servers.
+
+## <a id="python"></a>Python and Pip download
 Should use ENGR to just module load, but link to the Python download documentation
 ## venv setup and usage
 Set up a venv, source it, Pip install something with venv sourced, deactivate, and show that the dependency is only available after sourcing the venv
