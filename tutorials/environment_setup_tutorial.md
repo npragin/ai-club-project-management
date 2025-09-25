@@ -186,6 +186,62 @@ pip --version
 If neither gives you an error and you see version numbers, you're good to go! If either gives you an error, try `python3 --version` or `pip3 --version` instead.
 
 ## <a id="venv"></a>venv Setup and Usage
-Set up a venv, source it, Pip install something with venv sourced, deactivate, and show that the dependency is only available after sourcing the venv
 
-TODO(npragin): Make sure there are verification steps throughout for students to ensure they've done things correctly
+#### **If you already know how to use Python virtual environments, you're done with this tutorial!**
+
+### What is a Virtual Environment?
+
+A virtual environment (venv) is an isolated Python environment that allows you to install packages for a specific project without affecting other projects or your system's Python installation. This is crucial for machine learning projects because different projects often require different versions of the same libraries, and you don't want conflicts between them.
+
+### Why Use Virtual Environments?
+
+Without virtual environments, all Python packages are installed globally on your system. This can lead to:
+- Version conflicts between projects (Project A needs pandas 1.5, but Project B needs pandas 2.0)
+- Dependency bloat (your system accumulates packages you don't remember installing)
+- Difficulty reproducing your project environment on other machines
+
+Virtual environments solve these problems by creating isolated spaces for each project's dependencies.
+
+### Creating and Using a Virtual Environment
+
+1. **Create the virtual environment:**
+
+   Navigate to your project directory and run `python -m venv myproject-env`. (use `python3` if you had to when checking your Python version)
+   
+   This creates a new directory called `myproject-env` containing your virtual environment. You can name it anything you want, but it's common to use the project name followed by `-env`. Virtual environments generally live inside your project directory.
+
+2. **Activate the virtual environment:**
+   - On Linux/Mac (including ENGR servers): `source myproject-env/bin/activate`
+   - On Windows: `myproject-env\Scripts\activate`
+
+   When activated, you should see `(myproject-env)` at the beginning of your command prompt, indicating you're working inside the virtual environment.
+
+3. **Install packages in the virtual environment:**
+   With the environment activated, install a package: `pip install cowsay`
+
+4. **Verify the package is only available in the environment:**
+
+   - With the environment still activated, test that cowsay is available:
+     ```bash
+     python -c "import cowsay; cowsay.cow('Hello from my virtual environment')"
+     ```
+
+     You should see a cow saying "Hello from my virtual environment".
+   - Now deactivate the environment by running: `deactivate`
+
+     Notice that the `(myproject-env)` prefix disappears from your prompt.
+   - Try importing cowsay again:
+     ```bash
+     python -c "import cowsay; cowsay.cow('moo moo moo')"
+     ```
+     You should get an error like `ModuleNotFoundError: No module named 'cowsay'` (unless you have cowsay installed globally). This is because cowsay was installed only in the virtual environment, not globally.
+
+### Best Practices
+
+- Always activate your virtual environment before working on your project
+- Create a new virtual environment for each project
+- Keep track of your dependencies by running `pip freeze > requirements.txt` to save your installed packages to a file for easy reinstallation later
+   - To install dependencies from a requirements file, use `pip install -r requirements.txt`
+- Add your virtual environment folder to a .gitignore file, don't commit it to version control
+
+## Congrats! Your Environment is Set Up!
