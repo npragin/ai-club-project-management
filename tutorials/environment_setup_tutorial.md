@@ -115,7 +115,7 @@ This workflow is precisely what you'll use for your AI Club project throughout t
 
 You are free to use any text editor for your project; however, we recommend beginners to use Visual Studio Code (VS Code). VS Code is a free, lightweight code editor that integrates seamlessly with git, remote servers, and community extensions.
 
-#### **If you're not using VS Code, you can skip to the [Python and Pip Setup section](#python-setup)**
+#### **If you're not using VS Code, you can skip to the [Python and Pip Setup section](#python)**
 
 ### VS Code Installation
 1. Go to [code.visualstudio.com/download](https://code.visualstudio.com/download) and download the version of VS Code for your operating system
