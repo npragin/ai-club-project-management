@@ -95,7 +95,7 @@ Now that you've set up your SSH keys, let's create a test repository to practice
    6. Navigate into the new directory: `cd test-repo` (or whatever you named it)
 
 4. **Make some changes and push them back to GitHub**
-   1. Make a change to the README file: `echo "\nThis is my first GitHub repository!" >> README.md`
+   1. Make a change to the README file: `echo -e "\nThis is my first GitHub repository!" >> README.md`
    2. Check what files have changed: `git status`
    3. Stage your changes: `git add README.md` (or `git add .` to add all changes)
    4. Commit your changes: `git commit -m "Updated README with a personal message"`
