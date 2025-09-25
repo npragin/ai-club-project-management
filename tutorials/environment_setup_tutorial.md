@@ -170,15 +170,15 @@ VS Code's power comes from its extensions. You can open the Extensions panel by 
 
 #### **If you are working locally and have Python and Pip installed (verifiable via the [verification step for this section](#python-verification)), skip to the [venv Setup and Usage section](#venv)**
 
-Python is a programming language widely used in AI and machine learning. Pip is Python's package manager, which allows you to install and manage additional libraries and dependencies that are not included in the standard Python library.
+Python is a programming language widely used in AI and machine learning. Pip is Python's package manager, which allows you to install and manage additional libraries and dependencies that Python does not include by default.
 
-If you are on the ENGR servers, Python and Pip are already installed! By default, Python 3.9 is loaded, but if you want to use a specific version, you can use the `module load python/3.X` command, replacing `X` with the minor version you want (for example, `module load python/3.12`). You can see what versions are available by running `module avail python`. Note that you will have to re-run this every time you log in, or you can add the command to your `.bashrc` file to have it load automatically.
+If you are on the ENGR servers, Python and Pip are already installed! By default, the servers load Python 3.9, but if you want to use a specific version, you can use the `module load python/3.X` command, replacing `X` with the minor version you want (for example, `module load python/3.12`). You can see what versions are available by running `module avail python`. Note that you will need to re-run this command every time you log in. Alternatively, you can add it to your `.bashrc` file to have it load automatically.
 
-If you are working locally, you can find the installation instructions for Python, which includes Pip, on the [official Python website](https://www.python.org/downloads/). Make sure to download Python 3.9 or higher, as that is what most modern ML libraries require.
+If you are working locally, you can find the installation instructions for Python, which includes Pip, on the [official Python website](https://www.python.org/downloads/). Be sure to download Python 3.9 or higher, as that is what most modern ML libraries require.
 
 ### <a id="python-verification"></a>Python and Pip Verification
 
-To verify that Python and Pip are installed correctly, open your terminal and run the following commands:
+To verify that you've installed Python and Pip correctly, open your terminal and run the following commands:
 ```bash
 python --version
 pip --version
@@ -191,7 +191,7 @@ If neither gives you an error and you see version numbers, you're good to go! If
 
 ### What is a Virtual Environment?
 
-A virtual environment (venv) is an isolated Python environment that allows you to install packages for a specific project without affecting other projects or your system's Python installation. This is crucial for machine learning projects because different projects often require different versions of the same libraries, and you don't want conflicts between them.
+A virtual environment (venv) is an isolated Python environment that allows you to install packages for a specific project without affecting other projects or your system's Python installation. Dependency deconfliction is crucial for machine learning projects because different projects often require different versions of the same libraries, which can cause unexpected code execution.
 
 ### Why Use Virtual Environments?
 
@@ -208,7 +208,7 @@ Virtual environments solve these problems by creating isolated spaces for each p
 
    Navigate to your project directory and run `python -m venv myproject-env`. (use `python3` if you had to when checking your Python version)
    
-   This creates a new directory called `myproject-env` containing your virtual environment. You can name it anything you want, but it's common to use the project name followed by `-env`. Virtual environments generally live inside your project directory.
+   This command creates a new directory called `myproject-env` containing your virtual environment. You can name it anything you want, but it's common to use the project name followed by `-env`. Virtual environments typically reside within your project directory.
 
 2. **Activate the virtual environment:**
    - On Linux/Mac (including ENGR servers): `source myproject-env/bin/activate`
@@ -234,7 +234,7 @@ Virtual environments solve these problems by creating isolated spaces for each p
      ```bash
      python -c "import cowsay; cowsay.cow('moo moo moo')"
      ```
-     You should get an error like `ModuleNotFoundError: No module named 'cowsay'` (unless you have cowsay installed globally). This is because cowsay was installed only in the virtual environment, not globally.
+     You should get an error like `ModuleNotFoundError: No module named 'cowsay'` (unless you have cowsay installed globally). This error appears because cowsay was installed only in the virtual environment, not globally, so Python can not find the library.
 
 ### Best Practices
 
