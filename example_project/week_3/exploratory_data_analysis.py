@@ -58,6 +58,8 @@ def main():
     profile.to_file("example_project/week_2/student_data_report.html")
 
     # Split data into train and test subsets (80% train - 20% test)
+    # Although we won't use the test set in this file, it is important
+    # to hold out a set of test data the model does not see when training
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # Create a Decision Tree Classifier model
@@ -79,20 +81,14 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # Use 4-Fold Cross-Validation to re-evaluate model performance after feature engineering
+    # Ideally, we would evaluate performance with and without each engineered feature and only
+    # use the features that maximize accuracy, but in this case we will test all new features at once
     cv_scores = cross_val_score(model, X_train, y_train, cv=kf, scoring="accuracy")
 
     print("\nScores with Feature Engineering: ")
     print("Cross Validation scores:", cv_scores)
     print(f"Mean Validation Score: {np.mean(cv_scores)}\n")
 
-    # Train model on entire training set
-    model.fit(X_train, y_train)
-
-    # Evaluate model on test set
-    predictions = model.predict(X_test)
-    accuracy = accuracy_score(predictions, y_test)
-    print(f"Accuracy Score on Test Data: {accuracy}")
-
-
+    
 if __name__ == "__main__":
     main()
