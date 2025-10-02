@@ -11,7 +11,7 @@ Step-by-step guides to help you learn the industry-standard tools for machine le
 - **NumPy** - Learn fast numerical computing with arrays
 - **Pandas** - Master data loading, manipulation, and analysis
 - **Matplotlib** - Create visualizations to understand your data and results
-<!-- - **Scikit-learn** - Train and evaluate machine learning models -->
+- **Scikit-learn** - Train, evaluate, and save machine learning models
 <!-- - **PyTorch** - Build and train neural networks -->
 
 ### 🛠️ Example Project
@@ -29,7 +29,9 @@ Follow along with a complete machine learning project that demonstrates the full
    - Install Python, pip, and create virtual environments
 
 2. **Work Through the Tutorials**
-   - Start with NumPy, then move to Pandas and Matplotlib <!-- Add scikit-learn and PyTorch when they are ready -->
+   - Start with NumPy
+   - Move to Pandas and (optionally) Matplotlib
+   - Finish with scikit-learn!
    - Complete the exercises in each tutorial to reinforce your learning
    <!-- - Go through the PyTorch tutorial if you're ready to build your own neural network -->
 

@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 venv
+
+saved_model.pkl
