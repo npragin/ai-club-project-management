@@ -156,6 +156,7 @@ VS Code's power comes from its extensions. You can open the Extensions panel by 
    - Type "connect to host" and select "Remote-SSH: Connect to Host..."
    - Select the host you just added
    - A new VS Code window will open, connecting you to the ENGR servers
+   - If you are prompted to install extensions on the servers, accept!
 
 3. **Explore**
    - Once connected, open the file explorer by clicking the file icon in the left sidebar or pressing `Ctrl+Shift+E` (`Cmd+Shift+E` on Mac)
