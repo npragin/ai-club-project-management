@@ -1,15 +1,13 @@
 """
 Explore student dropout dataset and train a baseline predictive model.
 
-We use ydata-profiling to perform exploratory data analysis. A Decision Tree Classifier 
-is then trained to predict a student's graduation status. To improve performance, 
-we create new features and evaluate the model using K-Fold Cross Validation. 
+We use ydata-profiling to perform exploratory data analysis. A Decision Tree Classifier
+is then trained to predict a student's graduation status. To improve performance,
+we create new features and evaluate the model using K-Fold Cross Validation.
 """
 
 import numpy as np
 import pandas as pd
-
-from sklearn.metrics import accuracy_score
 from sklearn.model_selection import KFold, cross_val_score, train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from ucimlrepo import fetch_ucirepo
@@ -22,7 +20,7 @@ def feature_engineering(X: pd.DataFrame) -> pd.DataFrame:
     # Combine multiple finanical indicators into one feature
     X["Financial standing"] = X["Tuition fees up to date"] + X["Scholarship holder"] - X["Debtor"]
 
-    # Calculate ratio of approved (passed and received credit) to enrolled credits 
+    # Calculate ratio of approved (passed and received credit) to enrolled credits
     X["Approval rate 2nd sem"] = X["Curricular units 2nd sem (approved)"] / X["Curricular units 2nd sem (enrolled)"]
 
     # Calculate grade average improvement by students from the first to second semester
@@ -33,27 +31,26 @@ def feature_engineering(X: pd.DataFrame) -> pd.DataFrame:
     X["Mother higher education"] = X["Mother's qualification"].isin(higher_education).astype(int)
     X["Father higher education"] = X["Father's qualification"].isin(higher_education).astype(int)
     X["Parent higher education"] = (
-        X["Mother's qualification"].isin(higher_education) | 
-        X["Father's qualification"].isin(higher_education)
+        X["Mother's qualification"].isin(higher_education) | X["Father's qualification"].isin(higher_education)
     ).astype(int)
 
     return X
 
 
-def main():
+def main() -> None:
     """Run the student graduation status prediction workflow."""
 
     # Fetch students dataset from ucirepo
-    dataset = fetch_ucirepo(id=697) 
-    
+    dataset = fetch_ucirepo(id=697)
+
     # Store the dataset in two separate pandas dataframes
     # X = all columns (features) describing students (i.e., age, financial status)
     # y = graduation status of each student: Graduate, Dropout, or Enrolled
-    X = dataset.data.features 
-    y = dataset.data.targets 
+    X = dataset.data.features
+    y = dataset.data.targets
 
     # Create profile report to visualize and explore the student dataset (EDA)
-    df = pd.concat([X, y], axis=1) # combine features and target into one dataframe
+    df = pd.concat([X, y], axis=1)  # combine features and target into one dataframe
     profile = ProfileReport(df, title="Profiling Report")
     profile.to_file("example_project/week_2/student_data_report.html")
 
@@ -89,6 +86,6 @@ def main():
     print("Cross Validation scores:", cv_scores)
     print(f"Mean Validation Score: {np.mean(cv_scores)}\n")
 
-    
+
 if __name__ == "__main__":
     main()
