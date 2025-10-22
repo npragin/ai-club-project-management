@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 from ucimlrepo import fetch_ucirepo
 
 # Set plotting style for better readability
-plt.style.use("ggplot")
+plt.style.use("ggplot")  # type: ignore
 
 
 def main() -> None:
@@ -39,7 +39,7 @@ def main() -> None:
 
     ax = target_counts.plot(kind="bar", title="Student Graduation Status", xlabel="", ylabel="Count")
     ax.set_xticklabels(ax.get_xticklabels(), rotation=0, ha="center")
-    plt.show()
+    plt.show()  # type: ignore
 
 
 if __name__ == "__main__":
