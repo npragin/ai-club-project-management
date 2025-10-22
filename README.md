@@ -20,7 +20,8 @@ Follow along with a complete machine learning project that demonstrates the full
 - **Week 1**: Setting up the environment and tools (no code yet!)
 - **Week 2**: Loading and exploring the [student dropout dataset](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success)
 - **Week 3**: Performing exploratory data analysis and building a baseline model
-- **Weeks 4-10**: (Coming soon as we progress through the term!)
+- **Week 4**: Comparing multiple machine learning models and hyperparameter tuning
+- **Weeks 5-10**: (Coming soon as we progress through the term!)
 
 ## Getting Started
 
@@ -34,7 +35,7 @@ Follow along with a complete machine learning project that demonstrates the full
    - Move to Pandas and (optionally) Matplotlib
    - Finish with scikit-learn!
    - Complete the exercises in each tutorial to reinforce your learning
-   <!-- - Go through the PyTorch tutorial if you're ready to build your own neural network -->
+   - Go through the PyTorch tutorial if you're using deep learning-based approaches
 
 3. **Start Your Project!**
    - Check out our slides on our [website](https://osu-ai.club/project-workshop) that outline the project workflow
