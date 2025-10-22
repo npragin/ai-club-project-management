@@ -1,4 +1,11 @@
-data/
-.vscode/
-model.pth
+# Python
 .mypy_cache/
+.ipynb_checkpoints
+
+# IDE-specific
+.vscode/
+
+# Code generated files
+data/
+saved_model.pkl
+model.pth
