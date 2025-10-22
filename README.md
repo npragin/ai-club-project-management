@@ -12,8 +12,8 @@ Step-by-step guides to help you learn the industry-standard tools for machine le
 - **Pandas** - Master data loading, manipulation, and analysis
 - **Matplotlib** - Create visualizations to understand your data and results
 - **Scikit-learn** - Train, evaluate, and save machine learning models
-<!-- - **PyTorch** - Build and train neural networks -->
 - **PyTorch Quickguide** - Use PyTorch's built-in models and datasets for your own applications!
+<!-- - **PyTorch** - Build and train neural networks -->
 
 ### 🛠️ Example Project
 Follow along with a complete machine learning project that demonstrates the full workflow:
