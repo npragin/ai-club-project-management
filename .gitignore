@@ -1,4 +1,12 @@
+# Python
+.mypy_cache/
 .ipynb_checkpoints
 venv
 
+# IDE-specific
+.vscode/
+
+# Code generated files
+data/
 saved_model.pkl
+model.pth
