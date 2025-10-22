@@ -1,0 +1,4 @@
+data/
+.vscode/
+model.pth
+.mypy_cache/
