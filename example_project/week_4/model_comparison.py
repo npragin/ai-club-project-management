@@ -29,7 +29,6 @@ def transform_data(X_train: pd.DataFrame, X_test: pd.DataFrame) -> tuple[NDArray
 
 
 def main() -> None:
-
     # Load dataset from UCIrepo
     # Depending on how your dataset is available, you may load using pandas.read_csv
     dataset = fetch_ucirepo(id=697)
@@ -94,7 +93,6 @@ def main() -> None:
     # This helps us get a more reliable estimate of performance than a single train/test split.
     # Finally, we average the accuracy across all four folds to get a single estimate of performance.
     for name, cfg in models.items():
-
         print(f"\n--- {name} ---")
 
         model = cfg["model"]
