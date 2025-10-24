@@ -25,7 +25,7 @@ indent-style = "space"
 line-ending = "auto"
 
 [tool.mypy]
-python_version = "3.13"
+python_version = "3.12"
 
 disallow_untyped_calls = true
 disallow_untyped_defs = true
