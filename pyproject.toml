@@ -8,15 +8,23 @@ select = [
     "E",    # pycodestyle errors (flake8)
     "W",    # pycodestyle warnings (flake8)
     "F",    # pyflakes (flake8)
-    "I",    # isort (import sorting)
-    "UP",   # pyupgrade (modernize Python code)
-    "B",    # flake8-bugbear (catch common bugs)
+    "I",    # isort
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
     "C4",   # flake8-comprehensions
     "SIM",  # flake8-simplify
+    "N",    # pep8-naming
+    "RUF",  # Ruff-specific rules
+    "D",    # pydocstyle
+    "NPY",  # numpy
+    "PD",   # pandas-vet
+    "PERF", # perflint
 ]
 
 ignore = [
     "E203",  # Whitespace before ':' (conflicts with Black)
+    "D203",  # New line before docstring (conflicts with D211)
+    "D212",  # First line of docstring on same line as """ (conflicts with D213)
 ]
 
 [tool.ruff.format]
