@@ -2,6 +2,7 @@
 .mypy_cache/
 .ipynb_checkpoints
 venv
+__pycache__
 
 # IDE-specific
 .vscode/
