@@ -18,5 +18,5 @@ warn_redundant_casts = true
 warn_unused_ignores = true
 
 [[tool.mypy.overrides]]
-module = ["sklearn.*", "ucimlrepo.*", "ydata_profiling"]
+module = ["sklearn.*", "ucimlrepo.*", "ydata_profiling", "joblib", "scipy.stats", "torch.*", "torchvision.*"]
 ignore_missing_imports = true

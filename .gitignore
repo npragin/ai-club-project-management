@@ -10,3 +10,4 @@ venv
 data/
 saved_model.pkl
 model.pth
+models/
