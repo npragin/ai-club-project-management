@@ -2,6 +2,7 @@
 .mypy_cache/
 .ipynb_checkpoints
 venv
+__pycache__
 
 # IDE-specific
 .vscode/
@@ -10,3 +11,4 @@ venv
 data/
 saved_model.pkl
 model.pth
+models/
