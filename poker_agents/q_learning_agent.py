@@ -69,7 +69,7 @@ class PokerAgent:
         
         # With probability (1-epsilon): exploit (best known action)
         else:
-            state = (obs[1], obs[2], obs[8])
+            state = (obs[1], obs[2], obs[8]) # player_hand_rank, player_hand_high, is_preflop
             return int(np.argmax(self.q_values[state]))
         
     def update(
@@ -127,7 +127,7 @@ def train():
 
     # Create environment
     env = TexasHoldemEnv(
-        num_players=2,
+        num_players=3,
         initial_stack=1000,
         small_blind=10,
         big_blind=20,
