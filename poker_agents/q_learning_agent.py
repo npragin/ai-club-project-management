@@ -17,7 +17,7 @@ from matplotlib import pyplot as plt
 import gymnasium as gym
 import numpy as np
 
-from poker_agents import Action, TexasHoldemEnv
+from poker_agents import TexasHoldemEnv
 
 
 class PokerAgent:
