@@ -70,7 +70,7 @@ def main():
         big_blind=20,
         raise_amount=20,
         seed=42,
-        render_mode="ansi",
+        render_mode=None,
     )
     env = wrap_env(env)
     device = env.device
@@ -109,7 +109,7 @@ def main():
     # logging to TensorBoard and write checkpoints (in timesteps)
     cfg["experiment"]["write_interval"] = 500
     cfg["experiment"]["checkpoint_interval"] = 5000
-    cfg["experiment"]["directory"] = "runs/torch/Pendulum"
+    cfg["experiment"]["directory"] = "runs/torch/PokerPPO"
 
     agent = PPO(models=models,
                 memory=memory,
@@ -120,7 +120,7 @@ def main():
 
 
     # configure and instantiate the RL trainer
-    cfg_trainer = {"timesteps": 1000, "headless": True}
+    cfg_trainer = {"timesteps": 10000, "headless": False}
     trainer = SequentialTrainer(cfg=cfg_trainer, env=env, agents=[agent])
 
     # start training

@@ -16,8 +16,15 @@ from tqdm import tqdm
 from matplotlib import pyplot as plt
 import gymnasium as gym
 import numpy as np
+import random
 
-from poker_agents import TexasHoldemEnv
+from poker_agents import Action, TexasHoldemEnv
+
+
+class RandomAgent:
+    def get_action(self, obs: np.ndarray) -> int:
+        """Return random action."""
+        return random.choice([Action.FOLD, Action.CALL, Action.RAISE])
 
 
 class PokerAgent:
@@ -127,8 +134,8 @@ def train():
 
     # Create environment
     env = TexasHoldemEnv(
-        num_players=3,
-        initial_stack=1000,
+        num_players=2,
+        initial_stack=40,
         small_blind=10,
         big_blind=20,
         raise_amount=20,
@@ -229,17 +236,23 @@ def test_agent(env, agent, num_episodes=1000):
     # Temporarily disable exploration for testing
     old_epsilon = agent.epsilon
     agent.epsilon = 0.0  # Pure exploitation
+    max_steps = 500
 
-    for _ in range(num_episodes):
+    for _ in tqdm(range(num_episodes)):
         obs, info = env.reset()
         episode_reward = 0
         done = False
 
+        steps = 0
+
         while not done:
+            # get agent action
             action = agent.get_action(obs)
             obs, reward, terminated, truncated, info = env.step(action)
             episode_reward += reward
-            done = terminated or truncated
+            steps += 1
+            done = terminated or truncated or (steps >= max_steps)
+
 
         total_rewards.append(episode_reward)
 
