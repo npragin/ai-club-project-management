@@ -411,7 +411,7 @@ class TexasHoldemEnv(gym.Env):
                         reward = split_amount
 
                 # Remove eliminated players (stack == 0)
-                self.players = [p for p in self.players if p.stack > 0]
+                self._prune_eliminated_players()
 
                 # Check for tournament end - only one player left
                 if len(self.players) <= 1:
@@ -423,7 +423,7 @@ class TexasHoldemEnv(gym.Env):
 
         # Check if only one player remains (folded or eliminated)
         # Remove eliminated players first
-        self.players = [p for p in self.players if p.stack > 0]
+        self._prune_eliminated_players()
 
         # Check for tournament end - only one player left
         if len(self.players) <= 1:
@@ -435,12 +435,29 @@ class TexasHoldemEnv(gym.Env):
                 winner = active_players[0]
                 winner.stack += self.pot
                 reward = self.pot if winner.player_id == 0 else 0.0
-                terminated = True
+                # Rotate dealer and start new hand
+                self.dealer_idx = (self.dealer_idx + 1) % len(self.players)
+                self._start_new_hand()
 
         obs = self._get_observation()
         info = self._get_info()
 
         return obs, reward, terminated, truncated, info
+    
+    def _prune_eliminated_players(self) -> None:
+        """Remove elimnated players and properly reset player indices"""
+        # Remove eliminated players (stack == 0)
+        self.players = [p for p in self.players if p.stack > 0]
+
+        if len(self.players) <= 1:
+            return
+
+        # keep indices in range
+        self.current_player_idx %=  len(self.players)
+        self.dealer_idx %= len(self.players)
+
+        if self.last_raise_player >= 0:
+            self.last_raise_player %= len(self.players)
 
     def _start_new_hand(self) -> None:
         """Start a new hand."""
