@@ -23,8 +23,8 @@ def main() -> None:
     """Run a simple example game."""
     # Create environment
     env = TexasHoldemEnv(
-        num_players=4,
-        initial_stack=1000,
+        num_players=3,
+        initial_stack=300,
         small_blind=10,
         big_blind=20,
         raise_amount=20,
